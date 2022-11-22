@@ -9,6 +9,7 @@
         <module>spring_boot_demo-service</module>
         <module>spring_boot_demo-controller</module>
         <module>spring_boot_demo-web</module>
+        <module>spring_boot_admin</module>
     </modules>
 
     <parent>
