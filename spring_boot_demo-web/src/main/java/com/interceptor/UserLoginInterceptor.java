@@ -19,13 +19,13 @@ public class UserLoginInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("执行了拦截器的preHandle方法");
+        // System.out.println("执行了拦截器的preHandle方法");
         try {
             HttpSession session = request.getSession();
             //统一拦截（查询当前session是否存在user）(这里user会在每次登录成功后，写入session)
             String token = request.getParameter("TOKEN");
             if (token == null) {
-                System.out.println("密码错误");
+                // System.out.println("密码错误");
                 ReturnResult returnResult = new ReturnResult();
                 returnResult.setRet(0);
                 returnResult.setErr(100);
@@ -48,7 +48,7 @@ public class UserLoginInterceptor implements HandlerInterceptor {
      */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        System.out.println("执行了拦截器的postHandle方法");
+        // System.out.println("执行了拦截器的postHandle方法");
     }
 
     /***
@@ -56,6 +56,6 @@ public class UserLoginInterceptor implements HandlerInterceptor {
      */
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        System.out.println("执行了拦截器的afterCompletion方法");
+        // System.out.println("执行了拦截器的afterCompletion方法");
     }
 }
